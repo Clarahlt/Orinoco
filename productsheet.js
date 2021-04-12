@@ -19,16 +19,14 @@ fetch('https://ab-p5-api.herokuapp.com/api/cameras/' + idUrlProducts)
     let newP = document.querySelector('.p-price');
     newP.textContent = dataProducts.price/100 + " € ";
 
-    let lensesArray = [dataProducts.lenses];
+    let lensesArray = dataProducts.lenses;
     console.log(lensesArray);
+
     for (let i = 0; i < lensesArray.length; i++) {
       let dropdownMenu = document.querySelector('.dropdown-menu');
       let $lenses = document.createElement('li');
       dropdownMenu.appendChild($lenses);
-      let $lensesLinks = document.createElement('a');
-      $lenses.appendChild($lensesLinks);
-      $lensesLinks.innerText = lensesArray[i];
-            }
+      $lenses.innerText = lensesArray[i];}
 })
 
     

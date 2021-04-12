@@ -10918,9 +10918,18 @@ footer {
   margin-left: 20px;
 }
 
-#personalize {
+#personalize-btn-select {
   border: grey 1px solid;
-  background: silver;
+  width: 50%;
+  background-color: white;
+}
+
+.dropdown-menu.show {
+  width: 47%;
+}
+
+.dropdown-menu.show li:hover {
+  background-color: aliceblue;
 }
 
 .productsheet {
@@ -10945,8 +10954,22 @@ footer {
   border-left: silver 2px dotted;
 }
 
-.productsheet .info-product legend, .productsheet .info-product p, .productsheet .info-product .btn-group, .productsheet .info-product .add-to-caddy, .productsheet .info-product .qte {
+.productsheet .info-product legend, .productsheet .info-product p, .productsheet .info-product #personalize-btn-select, .productsheet .info-product .add-to-caddy, .productsheet .info-product .qte, .productsheet .info-product .p-price {
   margin-left: 30px;
+}
+
+.productsheet .info-product .dscpt-txt {
+  margin-top: 25px;
+}
+
+.productsheet .info-product .p-price {
+  position: absolute;
+  bottom: 80px;
+}
+
+.productsheet .info-product .add-to-caddy {
+  position: absolute;
+  bottom: 30px;
 }
 
 .qte {

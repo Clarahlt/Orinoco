@@ -75,10 +75,17 @@ footer{
 
 
 //Fiche produit
-#personalize{
+#personalize-btn-select{
     border: grey 1px solid;
-    background: silver;
+    width: 50%;
+    background-color: white;
 }
+.dropdown-menu.show{
+    width: 47%;
+    li:hover{
+        background-color: aliceblue;
+    }
+    }
 
 .productsheet{
     border: silver 1px solid;
@@ -96,8 +103,19 @@ footer{
     }
     .info-product{
         border-left: silver 2px dotted;
-        legend, p, .btn-group, .add-to-caddy, .qte{
+        legend, p, #personalize-btn-select, .add-to-caddy, .qte, .p-price{
             margin-left: 30px;
+        }
+        .dscpt-txt{
+            margin-top: 25px;
+        }
+        .p-price{
+            position: absolute;
+            bottom: 80px;
+        }
+        .add-to-caddy{
+            position: absolute;
+            bottom: 30px;
         }
     }
 }
