@@ -1,3 +1,4 @@
+//Création de contenu HTML 
 let titleContentProducts = document.querySelector('.title-products-content');
 titleContentProducts.textContent = 'La selection de nos experts !';
 
@@ -8,13 +9,25 @@ fetch("https://ab-p5-api.herokuapp.com/api/cameras")
     const dataProducts = data.length;
 
     for(let i = 0; i < dataProducts; i++){
+    
         console.log(data[i])
-        console.log(data[i]['_id']);
+        console.log(data[i]['_id'])
         console.log(data[i]['name']);
         console.log(data[i]['description']);
         console.log(data[i]['price']);
         console.log(data[i]['imageUrl']);
 
+        //objet produit à récupérer?
+        let ObjProduct = {
+            lenses: data[i]['lenses'],
+            id: data[i]['_id'],
+            name: data[i]['name'],
+            description: data[i]['description'],
+            price: data[i]['price'],
+            imageUrl: data[i]['imageUrl']
+        }
+
+        //Mise en page des produits    
         let cardsGroup = document.querySelector('.card-group');
         let $eachCard = document.createElement('div');
         $eachCard.classList.add('card','shadow');
@@ -47,4 +60,12 @@ fetch("https://ab-p5-api.herokuapp.com/api/cameras")
         $bodyCard.appendChild($priceProduct);
         $bodyCard.appendChild($btnCards);
     };
+
+    //LocalStorage Des données
+    let key = data;
+    let val = JSON.stringify(data);
+    window.localStorage.setItem(key, val);
+    let valeurs = JSON.parse(window.localStorage.getItem(key));
+    console.log(key)
+    
 });
