@@ -10933,9 +10933,12 @@ footer {
   height: 500px;
 }
 
-.productsheet #imgProduct {
+.productsheet .img-show-product {
   width: 100%;
-  height: 100%;
+  height: 80%;
+  position: relative;
+  top: 25px;
+  left: -9px;
 }
 
 .productsheet .info-product {

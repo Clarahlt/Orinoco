@@ -87,9 +87,12 @@ footer{
     .row.product-sheet{
         height: 500px;
     }
-    #imgProduct{
+    .img-show-product{
         width: 100%;
-        height: 100%;
+        height: 80%;
+        position: relative;
+        top: 25px;
+        left: -9px;
     }
     .info-product{
         border-left: silver 2px dotted;
