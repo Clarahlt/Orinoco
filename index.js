@@ -40,7 +40,7 @@ fetch("https://ab-p5-api.herokuapp.com/api/cameras")
         let $btnCards = document.createElement('a');
         $btnCards.classList.add('btn-card', 'btn', 'btn-secondary', 'stretched-link');
         $btnCards.setAttribute('id','productLink');
-        $btnCards.href = "/frontend/productsheet.html?" + data[i]._id;
+        $btnCards.href = "/productsheet.html?" + data[i]._id;
         $btnCards.innerText = 'Découvrir';
 
         $eachCard.appendChild($bodyCard);
