@@ -1,0 +1,227 @@
+@import "variable_overrides";
+
+.bg-custom{
+    background-color: #302F4D;
+}
+footer{
+    height: 100px;
+    position: relative;
+    bottom: -36px;
+    ul{
+        margin: 35px;
+        li.list-inline-item.dot{
+            color: #f99836;
+        }
+        
+        a{
+            color: #A57982;
+            &:hover{
+                color: #f99836;
+            }
+        }
+    }
+}
+
+//index.html
+#logo-orinoco{
+    background-color: linear-gradient(#8F5BFE, #B16D9B, #E2912F);
+}
+.bg-custom.header{
+    height: 55px;
+    .row{
+        margin: 0;
+    }
+    nav{
+        height: 55px;
+    }
+    #navbarContent{
+        margin-top: 20px;
+        .navbar-nav{
+            position: absolute;
+            top: 10px;
+            font-size: 22px;
+            .nav-item.caddy{
+                position: relative;
+                right: -940px;
+            }
+            }
+        }
+}
+.content-scene{
+    padding-right: 0;
+    padding-left: 0;
+    .content-scene-bg{
+        background-image:url('../images/appareil-photo-et-fleurs.jpg');
+        height: 425px;
+        background-size: cover;
+        background-position-y: -180px;
+        .para-content-scene{
+            position: absolute;
+            top: 170px;
+            left: 70px;
+            color: white;
+            text-shadow: 2px 2px black;
+        }
+    }
+    .products-content{
+        margin-top: 45px;
+        margin-bottom: 60px;
+        .card{
+            margin: 20px;
+            &:hover{
+                background: linear-gradient(45deg, #f99836, #F0D3F7);
+                .btn-card{
+                    background: #2F2F4C;
+                }
+            }
+            img{
+                height: 127px;
+            }
+            h4{
+                font-size: 20px;
+            }
+            .card-body{
+                .btn-card{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+
+//Fiche produit
+#personalize-btn-select{
+    border: grey 1px solid;
+    width: 50%;
+    background-color: white;
+}
+.dropdown-menu.show{
+    width: 47%;
+    li:hover{
+        background-color: aliceblue;
+    }
+    }
+
+.productsheet{
+    width: 90%;
+    border: silver 1px solid;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    .row.product-sheet{
+        height: 500px;
+        .popUpAddCaddy{
+            height: 100px;
+            background: #fcf4ff;
+            box-shadow: -2px 1px 9px;
+            border-radius: 5px;
+            width: 500px;
+            position: fixed;
+            left: 32%;
+            top: 30%;
+            text-align: center;
+            .textAddCaddy{
+                padding: 40px;
+            }
+        }
+        .btnPopUp{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            height: 15px;}
+    }
+    .img-show-product{
+        width: 100%;
+        height: 80%;
+    }
+    .info-product{
+        border-left: silver 2px dotted;
+        legend, p, #personalize-btn-select, .buy-it{
+            margin-left: 30px;
+        }
+        .dscpt-txt{
+            margin-top: 25px;
+        }
+        .buy-it{
+            display: flex;
+            position: relative;
+            top: 188px;
+            height: 45px;
+            input{
+                width: 25%;
+                text-align: center;
+            }
+            .custom-buy-it{
+                display: flex;
+                width: 100%;
+                background: linear-gradient(45deg, #f99836, #F0D3F7);
+                .add-to-caddy{
+                    width: 82%;
+                    color: white;
+                    border-radius: 0;
+                    &:hover{
+                        background: #302F4D;
+                        color: white;
+                    }
+                }
+                .p-price{
+                    border-left: white 2px dotted;
+                    padding: 10px;
+                    color: white;
+                    font-weight: 600;
+                    width: 18%;
+                    text-align: center;
+                }
+
+            }
+            
+
+        }
+        
+        
+    }
+}
+
+
+//Panier
+.container.caddy-content-form{
+    height: 410px;
+    .form{
+        padding: 35px;
+    }
+    .deleteBtn{
+        width: 100%;
+        height: 30px;
+        background: #A57982;
+    }
+    .popUpForm{
+        height: 100px;
+        background: #fcf4ff;
+        box-shadow: -2px 1px 9px;
+        border-radius: 5px;
+        width: 500px;
+        position: fixed;
+        left: 32%;
+        top: 30%;
+        text-align: center;
+        .textCompleteForm{
+            padding: 40px;
+        }
+    }
+    .btnPopUp{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        height: 15px;}
+}
+.container.content-confirmation{
+    height: 450px;
+    background: #fcf4ff;
+    margin-top: 50px;
+    border-radius: 25px;
+    .ctent-confirm{
+        text-align: center;
+        padding: 100px 0px;
+    }
+}
+

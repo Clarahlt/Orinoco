@@ -1,0 +1,264 @@
+.bg-custom {
+  background-color: #302F4D;
+}
+
+footer {
+  height: 100px;
+  position: relative;
+  bottom: -36px;
+}
+
+footer ul {
+  margin: 35px;
+}
+
+footer ul li.list-inline-item.dot {
+  color: #f99836;
+}
+
+footer ul a {
+  color: #A57982;
+}
+
+footer ul a:hover {
+  color: #f99836;
+}
+
+#logo-orinoco {
+  background-color: linear-gradient(#8F5BFE, #B16D9B, #E2912F);
+}
+
+.bg-custom.header {
+  height: 55px;
+}
+
+.bg-custom.header .row {
+  margin: 0;
+}
+
+.bg-custom.header nav {
+  height: 55px;
+}
+
+.bg-custom.header #navbarContent {
+  margin-top: 20px;
+}
+
+.bg-custom.header #navbarContent .navbar-nav {
+  position: absolute;
+  top: 10px;
+  font-size: 22px;
+}
+
+.bg-custom.header #navbarContent .navbar-nav .nav-item.caddy {
+  position: relative;
+  right: -940px;
+}
+
+.content-scene {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.content-scene .content-scene-bg {
+  background-image: url("../images/appareil-photo-et-fleurs.jpg");
+  height: 425px;
+  background-size: cover;
+  background-position-y: -180px;
+}
+
+.content-scene .content-scene-bg .para-content-scene {
+  position: absolute;
+  top: 170px;
+  left: 70px;
+  color: white;
+  text-shadow: 2px 2px black;
+}
+
+.content-scene .products-content {
+  margin-top: 45px;
+  margin-bottom: 60px;
+}
+
+.content-scene .products-content .card {
+  margin: 20px;
+}
+
+.content-scene .products-content .card:hover {
+  background: linear-gradient(45deg, #f99836, #F0D3F7);
+}
+
+.content-scene .products-content .card:hover .btn-card {
+  background: #2F2F4C;
+}
+
+.content-scene .products-content .card img {
+  height: 127px;
+}
+
+.content-scene .products-content .card h4 {
+  font-size: 20px;
+}
+
+.content-scene .products-content .card .card-body .btn-card {
+  width: 100%;
+}
+
+#personalize-btn-select {
+  border: grey 1px solid;
+  width: 50%;
+  background-color: white;
+}
+
+.dropdown-menu.show {
+  width: 47%;
+}
+
+.dropdown-menu.show li:hover {
+  background-color: aliceblue;
+}
+
+.productsheet {
+  width: 90%;
+  border: silver 1px solid;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.productsheet .row.product-sheet {
+  height: 500px;
+}
+
+.productsheet .row.product-sheet .popUpAddCaddy {
+  height: 100px;
+  background: #fcf4ff;
+  -webkit-box-shadow: -2px 1px 9px;
+          box-shadow: -2px 1px 9px;
+  border-radius: 5px;
+  width: 500px;
+  position: fixed;
+  left: 32%;
+  top: 30%;
+  text-align: center;
+}
+
+.productsheet .row.product-sheet .popUpAddCaddy .textAddCaddy {
+  padding: 40px;
+}
+
+.productsheet .row.product-sheet .btnPopUp {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  height: 15px;
+}
+
+.productsheet .img-show-product {
+  width: 100%;
+  height: 80%;
+}
+
+.productsheet .info-product {
+  border-left: silver 2px dotted;
+}
+
+.productsheet .info-product legend, .productsheet .info-product p, .productsheet .info-product #personalize-btn-select, .productsheet .info-product .buy-it {
+  margin-left: 30px;
+}
+
+.productsheet .info-product .dscpt-txt {
+  margin-top: 25px;
+}
+
+.productsheet .info-product .buy-it {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  top: 188px;
+  height: 45px;
+}
+
+.productsheet .info-product .buy-it input {
+  width: 25%;
+  text-align: center;
+}
+
+.productsheet .info-product .buy-it .custom-buy-it {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  background: linear-gradient(45deg, #f99836, #F0D3F7);
+}
+
+.productsheet .info-product .buy-it .custom-buy-it .add-to-caddy {
+  width: 82%;
+  color: white;
+  border-radius: 0;
+}
+
+.productsheet .info-product .buy-it .custom-buy-it .add-to-caddy:hover {
+  background: #302F4D;
+  color: white;
+}
+
+.productsheet .info-product .buy-it .custom-buy-it .p-price {
+  border-left: white 2px dotted;
+  padding: 10px;
+  color: white;
+  font-weight: 600;
+  width: 18%;
+  text-align: center;
+}
+
+.container.caddy-content-form {
+  height: 410px;
+}
+
+.container.caddy-content-form .form {
+  padding: 35px;
+}
+
+.container.caddy-content-form .deleteBtn {
+  width: 100%;
+  height: 30px;
+  background: #A57982;
+}
+
+.container.caddy-content-form .popUpForm {
+  height: 100px;
+  background: #fcf4ff;
+  -webkit-box-shadow: -2px 1px 9px;
+          box-shadow: -2px 1px 9px;
+  border-radius: 5px;
+  width: 500px;
+  position: fixed;
+  left: 32%;
+  top: 30%;
+  text-align: center;
+}
+
+.container.caddy-content-form .popUpForm .textCompleteForm {
+  padding: 40px;
+}
+
+.container.caddy-content-form .btnPopUp {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  height: 15px;
+}
+
+.container.content-confirmation {
+  height: 450px;
+  background: #fcf4ff;
+  margin-top: 50px;
+  border-radius: 25px;
+}
+
+.container.content-confirmation .ctent-confirm {
+  text-align: center;
+  padding: 100px 0px;
+}
+/*# sourceMappingURL=style.css.map */

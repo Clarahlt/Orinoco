@@ -1,7 +1,0 @@
-   //LocalStorage Des données
-    let key = data;
-    let val = JSON.stringify(data);
-    window.localStorage.setItem(key, val);
-    let valeurs = JSON.parse(window.localStorage.getItem(key));
-    console.log(key)
-
