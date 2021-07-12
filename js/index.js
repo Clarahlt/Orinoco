@@ -1,12 +1,11 @@
-// //Création de contenu HTML 
-// let titleContentProducts = document.querySelector('.title-products-content');
-// titleContentProducts.textContent = 'La selection de nos experts !';
+// Création d'une fonction 'getArticles' => permet de récupérer les datas des produits caméras
 function getArticles(){
-fetch("https://ab-p5-api.herokuapp.com/api/cameras")
+fetch("http://localhost:3000/api/cameras")
 .then(res => res.json())
 .then(data => {
     const dataProducts = data.length;
 
+    // Création d'une boucle for afin d'afficher les produits sur la page d'acceuil.
     for(let i = 0; i < dataProducts; i++){
     
         console.log(data[i])
@@ -39,6 +38,8 @@ fetch("https://ab-p5-api.herokuapp.com/api/cameras")
 
         let $btnCards = document.createElement('a');
         $btnCards.classList.add('btn-card', 'btn', 'btn-secondary', 'stretched-link');
+
+        //Introduction de l'ID du produit dans l'URL de la fiche-produit. 
         $btnCards.setAttribute('id','productLink');
         $btnCards.href = "/productsheet.html?" + data[i]._id;
         $btnCards.innerText = 'Découvrir';
@@ -48,11 +49,7 @@ fetch("https://ab-p5-api.herokuapp.com/api/cameras")
         $bodyCard.appendChild($shortDescriptProduct);
         $bodyCard.appendChild($priceProduct);
         $bodyCard.appendChild($btnCards);
-    };
-
- 
-    
+    };    
 });
 }
-
 getArticles()
