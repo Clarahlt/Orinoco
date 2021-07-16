@@ -86,6 +86,25 @@ footer{
                 }
             }
         }
+        .popUpErrServeur{
+            height: 100px;
+            background: #fcf4ff;
+            box-shadow: -2px 1px 9px;
+            border-radius: 5px;
+            width: 500px;
+            position: fixed;
+            left: 32%;
+            top: 30%;
+            text-align: center;
+            .textError{
+                padding: 25px;
+            }
+        }
+        .btnPopUp{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            height: 15px;}
     }
 }
 
@@ -186,15 +205,23 @@ footer{
 //Panier
 .container.caddy-content-form{
     height: 410px;
+    #totalCaddy{
+        position: relative;
+        right: -35px;
+        font-size: 18px;
+    }
     .form{
         padding: 35px;
     }
     .deleteBtn{
-        width: 100%;
+        width: 75%;
         height: 30px;
         background: #A57982;
+        i{
+            color: white;
+        }
     }
-    .popUpForm{
+    .popUpEmptyCart, .popUpFormValues{
         height: 100px;
         background: #fcf4ff;
         box-shadow: -2px 1px 9px;
@@ -204,15 +231,24 @@ footer{
         left: 32%;
         top: 30%;
         text-align: center;
-        .textCompleteForm{
-            padding: 40px;
+        .txtEmptyCart{
+            padding: 12px;
+            font-size: 25px;
         }
     }
     .btnPopUp{
         position: absolute;
+        right: 30%;
+        height: 25px;
+        bottom: 15px;
+    }
+    .btnPopUp1{
+        position: absolute;
         top: 10px;
         right: 10px;
-        height: 15px;}
+        height: 15px;
+    }
+        
 }
 .container.content-confirmation{
     height: 450px;
@@ -222,6 +258,11 @@ footer{
     .ctent-confirm{
         text-align: center;
         padding: 100px 0px;
+        .btnReturn{
+            width: 30%;
+            height: 30px;
+            margin-top: 60px;
+        }
     }
 }
 

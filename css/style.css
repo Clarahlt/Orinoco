@@ -104,6 +104,30 @@ footer ul a:hover {
   width: 100%;
 }
 
+.content-scene .products-content .popUpErrServeur {
+  height: 100px;
+  background: #fcf4ff;
+  -webkit-box-shadow: -2px 1px 9px;
+          box-shadow: -2px 1px 9px;
+  border-radius: 5px;
+  width: 500px;
+  position: fixed;
+  left: 32%;
+  top: 30%;
+  text-align: center;
+}
+
+.content-scene .products-content .popUpErrServeur .textError {
+  padding: 25px;
+}
+
+.content-scene .products-content .btnPopUp {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  height: 15px;
+}
+
 #personalize-btn-select {
   border: grey 1px solid;
   width: 50%;
@@ -216,17 +240,27 @@ footer ul a:hover {
   height: 410px;
 }
 
+.container.caddy-content-form #totalCaddy {
+  position: relative;
+  right: -35px;
+  font-size: 18px;
+}
+
 .container.caddy-content-form .form {
   padding: 35px;
 }
 
 .container.caddy-content-form .deleteBtn {
-  width: 100%;
+  width: 75%;
   height: 30px;
   background: #A57982;
 }
 
-.container.caddy-content-form .popUpForm {
+.container.caddy-content-form .deleteBtn i {
+  color: white;
+}
+
+.container.caddy-content-form .popUpEmptyCart, .container.caddy-content-form .popUpFormValues {
   height: 100px;
   background: #fcf4ff;
   -webkit-box-shadow: -2px 1px 9px;
@@ -239,11 +273,19 @@ footer ul a:hover {
   text-align: center;
 }
 
-.container.caddy-content-form .popUpForm .textCompleteForm {
-  padding: 40px;
+.container.caddy-content-form .popUpEmptyCart .txtEmptyCart, .container.caddy-content-form .popUpFormValues .txtEmptyCart {
+  padding: 12px;
+  font-size: 25px;
 }
 
 .container.caddy-content-form .btnPopUp {
+  position: absolute;
+  right: 30%;
+  height: 25px;
+  bottom: 15px;
+}
+
+.container.caddy-content-form .btnPopUp1 {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -260,5 +302,11 @@ footer ul a:hover {
 .container.content-confirmation .ctent-confirm {
   text-align: center;
   padding: 100px 0px;
+}
+
+.container.content-confirmation .ctent-confirm .btnReturn {
+  width: 30%;
+  height: 30px;
+  margin-top: 60px;
 }
 /*# sourceMappingURL=style.css.map */

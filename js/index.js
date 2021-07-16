@@ -1,19 +1,23 @@
-// Création d'une fonction 'getArticles' => permet de récupérer les datas des produits caméras
+/**
+ * Effectue une requête GET avec fetch sur le serveur pour récupérer tous les articles disponibles
+ */
 function getArticles(){
 fetch("http://localhost:3000/api/cameras")
-.then(res => res.json())
+.then(res => {
+    if(res.ok){
+        return res.json()
+    } else {
+        return new popUpError('Une erreur est survenue' + ' ' + '(' + res.status + ')' + ' ' + 'veuillez réessayer ultérieurement')
+    }
+})
 .then(data => {
-    const dataProducts = data.length;
+    
+    //affichage dans la console le tableau des produits récupérés sur le serveur
+    console.log("Données du serveur:");
+    console.log(data);
 
     // Création d'une boucle for afin d'afficher les produits sur la page d'acceuil.
-    for(let i = 0; i < dataProducts; i++){
-    
-        console.log(data[i])
-        console.log(data[i]['_id'])
-        console.log(data[i]['name']);
-        console.log(data[i]['description']);
-        console.log(data[i]['price']);
-        console.log(data[i]['imageUrl']);
+    for(let i = 0; i < data.length; i++){
 
         //Mise en page des produits    
         let cardsGroup = document.querySelector('.card-group');
@@ -49,7 +53,32 @@ fetch("http://localhost:3000/api/cameras")
         $bodyCard.appendChild($shortDescriptProduct);
         $bodyCard.appendChild($priceProduct);
         $bodyCard.appendChild($btnCards);
-    };    
-});
+    }; 
+})
+.catch(error => popUpError('Une erreur est survenue sur le serveur ! veuillez réessayer ultérieurement!'))
 }
-getArticles()
+
+/**
+ * 
+ * @param {string} messageError Affiche une popUp contenant un message d'erreur
+ */
+function popUpError(messageError){
+    let containerProducts = document.querySelector('#products-content')
+    let popUpErrServeur = document.createElement('div');
+    popUpErrServeur.setAttribute('class','popUpErrServeur')
+    let textError = document.createElement('div')
+    textError.setAttribute('class', 'textError')
+    textError.textContent = messageError;
+    let btnpopUp = document.createElement('button')  
+    btnpopUp.setAttribute('class', 'btnPopUp')
+    containerProducts.appendChild(popUpErrServeur)
+    popUpErrServeur.appendChild(textError)
+    popUpErrServeur.appendChild(btnpopUp)
+    btnpopUp.addEventListener('click', ()=> {
+        let productsPage = document.querySelector('#products-content')
+        let popUp = document.querySelector('.popUpErrServeur')
+        productsPage.removeChild(popUp)
+})
+}
+
+getArticles();
