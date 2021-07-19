@@ -4,10 +4,9 @@
 function getArticles(){
 fetch("http://localhost:3000/api/cameras")
 .then(res => {
+    console.log('on est dans le premier then');
     if(res.ok){
         return res.json()
-    } else {
-        return new popUpError('Une erreur est survenue' + ' ' + '(' + res.status + ')' + ' ' + 'veuillez réessayer ultérieurement')
     }
 })
 .then(data => {
@@ -63,6 +62,7 @@ fetch("http://localhost:3000/api/cameras")
  * @param {string} messageError Affiche une popUp contenant un message d'erreur
  */
 function popUpError(messageError){
+    console.log(messageError);
     let containerProducts = document.querySelector('#products-content')
     let popUpErrServeur = document.createElement('div');
     popUpErrServeur.setAttribute('class','popUpErrServeur')

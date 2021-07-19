@@ -1,9 +1,8 @@
 /**
  * getProductId => permet de récupèrer depuis l'URL et l'identifiant du produit les données sur l'API
- * @param {number} positionUrl récupère la position URL de la page productsheet.html contenant l'identifiant du produit
  * @param {string|number} productId définit l'identifiant du produit
  */
-function getProductId(positionUrl, productId) {
+function getProductId(productId) {
   console.log('Identifiant du produit selectionné:' + ' ' + productId)
 }
 

@@ -76,8 +76,7 @@ footer ul a:hover {
 }
 
 .content-scene .products-content {
-  margin-top: 45px;
-  margin-bottom: 60px;
+  margin: 40px auto;
 }
 
 .content-scene .products-content .card {
