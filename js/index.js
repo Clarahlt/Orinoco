@@ -4,7 +4,7 @@
 function getArticles(){
 fetch("http://localhost:3000/api/cameras")
 .then(res => {
-    console.log('on est dans le premier then');
+    console.log('Réponse du serveur' + ' ' + res.status);
     if(res.ok){
         return res.json()
     }
@@ -25,7 +25,7 @@ fetch("http://localhost:3000/api/cameras")
         cardsGroup.appendChild($eachCard);
 
         let $imgProduct = document.createElement('img');
-        $imgProduct.classList.add('card-img-top');
+        $imgProduct.setAttribute('class', 'card-img-top img-fluid');
         $imgProduct.src = data[i]['imageUrl'];
         $eachCard.appendChild($imgProduct);
 

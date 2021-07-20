@@ -17,6 +17,7 @@ function getProductsbyId() {
 fetch('http://localhost:3000/api/cameras/' + idUrlProducts)
 .then(res => res.json())
 .then(dataProducts => {
+  console.log(dataProducts);
   let newName = document.querySelector('.name-product');
   newName.innerHTML = dataProducts.name;
   let showProduct = document.querySelector('.show-product');

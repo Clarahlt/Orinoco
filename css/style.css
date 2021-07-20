@@ -91,10 +91,6 @@ footer ul a:hover {
   background: #2F2F4C;
 }
 
-.content-scene .products-content .card img {
-  height: 127px;
-}
-
 .content-scene .products-content .card h4 {
   font-size: 20px;
 }
@@ -148,10 +144,6 @@ footer ul a:hover {
   margin-bottom: 40px;
 }
 
-.productsheet .row.product-sheet {
-  height: 500px;
-}
-
 .productsheet .row.product-sheet .popUpAddCaddy {
   height: 100px;
   background: #fcf4ff;
@@ -198,7 +190,7 @@ footer ul a:hover {
   display: -ms-flexbox;
   display: flex;
   position: relative;
-  top: 188px;
+  top: 131px;
   height: 45px;
 }
 
@@ -307,5 +299,68 @@ footer ul a:hover {
   width: 30%;
   height: 30px;
   margin-top: 60px;
+}
+
+@media all and (min-width: 375px) and (max-width: 667px) {
+  footer {
+    height: 120px;
+  }
+  #navbarContent .navbar-nav {
+    right: -10px;
+    top: 47px;
+    width: 50%;
+    background-color: white;
+    border-radius: 5px;
+  }
+  .navbar-toggler {
+    background: white;
+    position: relative;
+    top: -8px;
+    right: -25px;
+  }
+  .content-scene .content-scene-bg {
+    background-size: cover;
+    background-position: right;
+  }
+  .content-scene .content-scene-bg .para-content-scene {
+    position: relative;
+    top: 0px;
+    left: 50px;
+  }
+  .productsheet .row.product-sheet {
+    display: block;
+  }
+  .productsheet .row.product-sheet .info-product {
+    border-left: 0;
+  }
+  .productsheet .row.product-sheet .info-product .dscpt-product, .productsheet .row.product-sheet .info-product p, .productsheet .row.product-sheet .info-product #personalize-btn-select {
+    margin-left: 0;
+  }
+  .productsheet .row.product-sheet .info-product .buy-it {
+    top: 60px;
+    margin-left: 0;
+  }
+  .productsheet .row.product-sheet .info-product .buy-it input {
+    width: 25%;
+    text-align: center;
+  }
+  .productsheet .row.product-sheet .info-product .buy-it .custom-buy-it .add-to-caddy {
+    width: 70%;
+  }
+  .productsheet .row.product-sheet .info-product .buy-it .custom-buy-it .p-price {
+    padding: 0;
+    margin: auto 0px;
+    width: 30%;
+  }
+  .productsheet .row.product-sheet .popUpAddCaddy {
+    width: 275px;
+    left: 53px;
+  }
+  .container.caddy-content-form .form {
+    padding: 0;
+  }
+  .container.caddy-content-form .form .form-control {
+    width: auto;
+  }
 }
 /*# sourceMappingURL=style.css.map */

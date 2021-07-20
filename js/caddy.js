@@ -86,73 +86,97 @@ function showTotalCaddy() {
   $total.setAttribute("id", "totalCaddy");
   $total.innerHTML = total + "€";
   totalProductsPrice.appendChild($total);
+  
+  let number = 3
+  console.log('test de la fonction avec un calcul simple:' + ' ' + number+number);
+
+  console.log('prix total du panier:'+ ' ' + total);
 }
 
-// Création de 3 fonctions ValidNames, validAddress, validEmail => permet de valider les données du formulaire avant son envoi
+/**
+ * 
+ * @param {objet} sentToServer => données du formulaire
+ * @returns renvoie 'true' si le code Regex est respecté/ renvoi 'false' et un message d'erreur si ce n'est pas le cas
+ */
 function validNames(sentToServer) {
   if (
     /^[A-Za-z$-]{3,20}$/.exec(sentToServer.contact.lastName) &&
     /^[A-Za-zà-ÿ\s$-]{3,20}$/.exec(sentToServer.contact.firstName)
   ) {
-    console.log("ok");
+    console.log("les champs sont remplis correctement");
     return true;
   } else {
-    console.log("ko");
+    console.log("Un problème est survenu dans l'un des champs du formulaire !");
     return false;
   }
 }
+/**
+ * 
+ * @param {objet} sentToServer => données du formulaire
+ * @returns renvoie 'true' si le code Regex est respecté/ renvoi 'false' et un message d'erreur si ce n'est pas le cas
+ */
 function validAddress(sentToServer) {
   if (
     /^[0-9]{1,4}\s[A-zà-ÿ-\s]{1,}/.exec(sentToServer.contact.address) &&
     /^[A-Za-zà-ÿ\-]|[0-9]{5}$/.exec(sentToServer.contact.city)
   ) {
-    console.log("ok");
+    console.log("les champs sont remplis correctement");
     return true;
   } else {
-    console.log("ko");
+    console.log("Un problème est survenu dans l'un des champs du formulaire !");
     return false;
   }
 }
+/**
+ * 
+ * @param {objet} sentToServer => => données du formulaire
+ * @returns renvoie 'true' si le code Regex est respecté/ renvoi 'false' et un message d'erreur si ce n'est pas le cas
+ */
 function validEmail(sentToServer) {
   if (/^([\w\.\-_]+)?\w+@[a-z]+(\.\w+){1,}$/.exec(sentToServer.contact.email)) {
-    console.log("ok");
+    console.log("les champs sont remplis correctement");
     return true;
   } else {
-    console.log("ko");
+    console.log("Un problème est survenu dans l'un des champs du formulaire !");
     return false;
   }
 }
-// Récupération des valeurs du formulaire pour les mettre dans le local storage afin de les envoyer au serveur
+
+
+
+/**
+ * Récupération des valeurs du formulaire pour les mettre dans le local storage afin de les envoyer au serveue
+ */ 
 let BtnForm = document.getElementById("btnForm");
 let orderForm = document.getElementById("order-form");
 
 BtnForm.addEventListener("click", (e) => {
-  e.preventDefault;
-  // alert("rentre ici");
-  // //Création de l'objet à envoyer au serveur
-  // let sentToServer = {
-  //   contact: {
-  //     firstName: orderForm["firstname"].value,
-  //     lastName: orderForm["lastname"].value,
-  //     address: orderForm["adress"].value,
-  //     city: orderForm["city"].value,
-  //     email: orderForm["email"].value,
-  //   },
-  //   products: arrayProductsId,
-  // };
+  e.preventDefault();
+  // Création de l'objet à envoyer au serveur
+   let sentToServer = {
+     contact: {
+       firstName: orderForm["firstname"].value,
+       lastName: orderForm["lastname"].value,
+       address: orderForm["adress"].value,
+       city: orderForm["city"].value,
+       email: orderForm["email"].value,
+     },
+     products: arrayProductsId,
+   };
 
-  // // Si les données sont conformes au code Regex, les données sont stockées dans le localStorage sous la clé 'ValidationCaddy'
-  // if (validNames(sentToServer) && validAddress(sentToServer) && validEmail(sentToServer) == true) {
-  //   localStorage.setItem("ValidationCaddy", JSON.stringify(sentToServer));
-  // } else {
-  //   alert('popUp')
-  //   popUpFormValues("Veuillez remplir les champs du formulaire correctement");
-  // }
-  // alert('sentToServer')
-  // send(sentToServer);
+   // Si les données sont conformes au code Regex, les données sont stockées dans le localStorage sous la clé 'ValidationCaddy'
+   if (validNames(sentToServer) && validAddress(sentToServer) && validEmail(sentToServer) == true) {
+     localStorage.setItem("ValidationCaddy", JSON.stringify(sentToServer));
+     send(sentToServer);
+    } else {
+     popUpFormValues("Veuillez remplir les champs du formulaire correctement");
+   }
 });
 
-
+/**
+ * 
+ * @param {objet} sentToServer Envoi des données vers le serveur par le biais d'une requête POST 
+ */
 function send(sentToServer) {
   const options = {
     method: "POST",
@@ -171,7 +195,7 @@ function send(sentToServer) {
       const data = await res.json();
       let orderId = data.orderId
       localStorage.setItem("orderId", orderId)
-      console.log('afficher: ' + orderId);
+      console.log('Réponse du serveur: ' + orderId);
       hydratatePage()
     } catch (error) {
       console.log(error);
@@ -181,13 +205,14 @@ function send(sentToServer) {
 }
 
 
+
  /**
    * Fonction qui reload la page et renvoi un nouveau contenu confirmation de commande avec un numéro 'orderId'
    */
   function hydratatePage() {
     console.log("Entrée dans la fonction hydratePage");
     const responseId = localStorage.getItem("orderId");
-    console.log(responseId);
+    console.log('Afficher:' + ' ' + responseId);
     let validCaddy = JSON.parse(localStorage.getItem("ValidationCaddy"));
     console.log(validCaddy.contact.firstName);
     let hydratatePage = document.getElementById("content-form");
@@ -239,6 +264,11 @@ function send(sentToServer) {
     b.replaceChild(newPage, hydratatePage);
   }
 
+
+  /**
+   * 
+   * @param {string} emptyCart renvoie une pop-up contenant un message d'erreur si le panier est vide
+   */
 function popUpEmptyCart(emptyCart) {
   let containerPopUp = document.querySelector(".caddy-content-form");
   let popUpEmptyCart = document.createElement("div");
@@ -261,25 +291,30 @@ function popUpEmptyCart(emptyCart) {
   });
 }
 
+
+/**
+ * 
+ * @param {string} errorMessage renvoie une pop-up contenant un message d'erreur si le formulaire est mal rempli
+ */
 function popUpFormValues(errorMessage) {
-  // let containerPopUp = document.querySelector(".caddy-content-form");
-  // let popUpFormValues = document.createElement("div");
-  // popUpFormValues.setAttribute("class", "popUpFormValues");
-  // let txtFormValues = document.createElement("div");
-  // txtFormValues.setAttribute("class", "txtFormValues");
-  // txtFormValues.textContent = errorMessage;
-  // let btnpopUp1 = document.createElement("button");
-  // btnpopUp1.setAttribute("class", "btnPopUp1");
-  // containerPopUp.appendChild(popUpFormValues);
-  // popUpFormValues.appendChild(txtFormValues);
-  // popUpFormValues.appendChild(btnpopUp1);
+   let containerPopUp = document.querySelector(".caddy-content-form");
+   let popUpFormValues = document.createElement("div");
+   popUpFormValues.setAttribute("class", "popUpFormValues");
+   let txtFormValues = document.createElement("div");
+   txtFormValues.setAttribute("class", "txtFormValues");
+   txtFormValues.textContent = errorMessage;
+   let btnpopUp1 = document.createElement("button");
+   btnpopUp1.setAttribute("class", "btnPopUp1");
+   containerPopUp.appendChild(popUpFormValues);
+   popUpFormValues.appendChild(txtFormValues);
+   popUpFormValues.appendChild(btnpopUp1);
 
 
-  // btnpopUp.addEventListener("click", () => {
-  //   let productSheet = document.querySelector(".caddy-content-form");
-  //   let popUp = document.querySelector(".popUpEmptyCart");
-  //   productSheet.removeChild(popUp);
-  // });
+   btnpopUp1.addEventListener("click", () => {
+     let productSheet = document.querySelector(".caddy-content-form");
+     let popUp = document.querySelector(".popUpFormValues");
+     productSheet.removeChild(popUp);
+   });
 }
 
 drawTable(arrayProducts);
