@@ -1,12 +1,45 @@
 body {
   font-family: 'Open Sans', sans-serif;
+  background-color: #F6F8FA;
 }
 
-.bg-custom {
+#Navbar .navbar {
   background-color: #302F4D;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+@media (max-width: 776px) {
+  #Navbar .navbar {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+#Navbar .navbar .navbar-brand img {
+  width: 30%;
+}
+
+@media (max-width: 776px) {
+  #Navbar .navbar .navbar-brand img {
+    width: 100px;
+  }
+}
+
+#Navbar .navbar .nav {
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
 }
 
 footer {
+  background-color: #302F4D;
   height: 100px;
   position: relative;
   bottom: -36px;
@@ -65,22 +98,56 @@ footer ul a:hover {
 }
 
 .content-scene .content-scene-bg {
-  background-image: url("../images/appareil-photo-et-fleurs.jpg");
-  height: 425px;
-  background-size: cover;
-  background-position-y: -180px;
+  width: 100%;
+  margin: 15px 0px;
+  border: 2px solid orange;
+  border-radius: 15px;
+  overflow: hidden;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
 }
 
 .content-scene .content-scene-bg .para-content-scene {
-  position: absolute;
-  top: 170px;
-  left: 70px;
-  color: white;
-  text-shadow: 2px 2px black;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  color: orange;
+  text-shadow: 1px 1px lightgrey;
+}
+
+@media (max-width: 320px) {
+  .content-scene .content-scene-bg .para-content-scene {
+    position: absolute;
+    bottom: -35px;
+  }
+}
+
+@media (min-width: 375px) and (max-width: 776px) {
+  .content-scene .content-scene-bg .para-content-scene {
+    position: absolute;
+    bottom: -20px;
+  }
+}
+
+@media (max-width: 776px) {
+  .content-scene .content-scene-bg .para-content-scene h1 {
+    display: none;
+  }
+}
+
+.content-scene .content-scene-bg .para-content-scene p {
+  font-size: large;
 }
 
 .content-scene .products-content {
   margin: 40px auto;
+}
+
+@media (max-width: 1024px) {
+  .content-scene .products-content .card-group {
+    display: initial;
+  }
 }
 
 .content-scene .products-content .card {
@@ -95,8 +162,27 @@ footer ul a:hover {
   background: #2F2F4C;
 }
 
+@media (max-width: 1024px) {
+  .content-scene .products-content .card img {
+    height: auto;
+  }
+}
+
+@media (min-width: 1025px) {
+  .content-scene .products-content .card img {
+    height: 120px;
+  }
+}
+
 .content-scene .products-content .card h4 {
   font-size: 20px;
+}
+
+@media (max-width: 1024px) {
+  .content-scene .products-content .card .card-body h4 {
+    font-size: inherit;
+    font-weight: bold;
+  }
 }
 
 .content-scene .products-content .card .card-body .btn-card {
@@ -148,6 +234,12 @@ footer ul a:hover {
   margin-bottom: 40px;
 }
 
+.productsheet .row.product-sheet {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .productsheet .row.product-sheet .popUpAddCaddy {
   height: 100px;
   background: #fcf4ff;
@@ -156,9 +248,16 @@ footer ul a:hover {
   border-radius: 5px;
   width: 500px;
   position: fixed;
-  left: 32%;
   top: 30%;
   text-align: center;
+}
+
+@media (max-width: 776px) {
+  .productsheet .row.product-sheet .popUpAddCaddy {
+    width: 85%;
+    height: auto;
+    margin: auto;
+  }
 }
 
 .productsheet .row.product-sheet .popUpAddCaddy .textAddCaddy {
@@ -198,6 +297,20 @@ footer ul a:hover {
   height: 45px;
 }
 
+@media (max-width: 776px) {
+  .productsheet .info-product .buy-it {
+    top: 60px;
+    width: 100%;
+    margin: auto;
+  }
+}
+
+@media (min-width: 776px) and (max-width: 1024px) {
+  .productsheet .info-product .buy-it {
+    top: 30px;
+  }
+}
+
 .productsheet .info-product .buy-it input {
   width: 25%;
   text-align: center;
@@ -209,6 +322,14 @@ footer ul a:hover {
   display: flex;
   width: 100%;
   background: linear-gradient(45deg, #f99836, #F0D3F7);
+}
+
+@media (max-width: 776px) {
+  .productsheet .info-product .buy-it .custom-buy-it {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 .productsheet .info-product .buy-it .custom-buy-it .add-to-caddy {
@@ -229,6 +350,13 @@ footer ul a:hover {
   font-weight: 600;
   width: 18%;
   text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .productsheet .info-product .buy-it .custom-buy-it .p-price {
+    width: 50%;
+    padding: 5px;
+  }
 }
 
 .container.caddy-content-form {
@@ -303,68 +431,5 @@ footer ul a:hover {
   width: 30%;
   height: 30px;
   margin-top: 60px;
-}
-
-@media all and (min-width: 375px) and (max-width: 667px) {
-  footer {
-    height: 120px;
-  }
-  #navbarContent .navbar-nav {
-    right: -10px;
-    top: 47px;
-    width: 50%;
-    background-color: white;
-    border-radius: 5px;
-  }
-  .navbar-toggler {
-    background: white;
-    position: relative;
-    top: -8px;
-    right: -25px;
-  }
-  .content-scene .content-scene-bg {
-    background-size: cover;
-    background-position: right;
-  }
-  .content-scene .content-scene-bg .para-content-scene {
-    position: relative;
-    top: 0px;
-    left: 50px;
-  }
-  .productsheet .row.product-sheet {
-    display: block;
-  }
-  .productsheet .row.product-sheet .info-product {
-    border-left: 0;
-  }
-  .productsheet .row.product-sheet .info-product .dscpt-product, .productsheet .row.product-sheet .info-product p, .productsheet .row.product-sheet .info-product #personalize-btn-select {
-    margin-left: 0;
-  }
-  .productsheet .row.product-sheet .info-product .buy-it {
-    top: 60px;
-    margin-left: 0;
-  }
-  .productsheet .row.product-sheet .info-product .buy-it input {
-    width: 25%;
-    text-align: center;
-  }
-  .productsheet .row.product-sheet .info-product .buy-it .custom-buy-it .add-to-caddy {
-    width: 70%;
-  }
-  .productsheet .row.product-sheet .info-product .buy-it .custom-buy-it .p-price {
-    padding: 0;
-    margin: auto 0px;
-    width: 30%;
-  }
-  .productsheet .row.product-sheet .popUpAddCaddy {
-    width: 275px;
-    left: 53px;
-  }
-  .container.caddy-content-form .form {
-    padding: 0;
-  }
-  .container.caddy-content-form .form .form-control {
-    width: auto;
-  }
 }
 /*# sourceMappingURL=style.css.map */

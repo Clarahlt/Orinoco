@@ -1,11 +1,31 @@
 @import "variable_overrides";
 body{
     font-family: 'Open Sans', sans-serif;
+    background-color: #F6F8FA;
 }
-.bg-custom{
-    background-color: #302F4D;
+#Navbar{
+    .navbar{
+        background-color: #302F4D;
+        justify-content: right;
+        flex-direction: row;
+        @media (max-width: 776px){
+            justify-content: space-between;
+        }
+        .navbar-brand{
+            img{
+                width: 30%;
+                @media (max-width: 776px) {
+                  width: 100px;           
+                }
+            }
+        }
+        .nav{
+            align-items: baseline;
+        }
+    }
 }
 footer{
+    background-color: #302F4D;
     height: 100px;
     position: relative;
     bottom: -36px;
@@ -53,20 +73,42 @@ footer{
     padding-right: 0;
     padding-left: 0;
     .content-scene-bg{
-        background-image:url('../images/appareil-photo-et-fleurs.jpg');
-        height: 425px;
-        background-size: cover;
-        background-position-y: -180px;
+        width: 100%;
+        margin: 15px 0px;
+        border: 2px solid orange;
+        border-radius: 15px;
+        overflow: hidden;
+        justify-content: end;
         .para-content-scene{
-            position: absolute;
-            top: 170px;
-            left: 70px;
-            color: white;
-            text-shadow: 2px 2px black;
+            align-self: center;
+            color: orange;
+            text-shadow: 1px 1px lightgrey;
+            @media (max-width: 320px){
+                position: absolute;
+                bottom: -35px;
+            }
+            @media (min-width: 375px) and (max-width: 776px){
+                position: absolute;
+                bottom: -20px;
+            }
+
+            h1{
+                @media (max-width: 776px){
+                    display: none;
+                }
+            }
+            p{
+                font-size: large;
+            }
         }
     }
     .products-content{
         margin: 40px auto;
+        .card-group{
+            @media (max-width: 1024px) {
+                display: initial;
+            }
+        }
         .card{
             margin: 20px;
             &:hover{
@@ -75,10 +117,25 @@ footer{
                     background: #2F2F4C;
                 }
             }
+            img{
+                @media (max-width: 1024px) {
+                    height: auto;
+
+                }
+                @media (min-width: 1025px){
+                    height: 120px;
+                }
+            }
             h4{
                 font-size: 20px;
             }
             .card-body{
+                h4{
+                    @media (max-width: 1024px){
+                        font-size: inherit;
+                        font-weight: bold;
+                    }
+                }
                 .btn-card{
                     width: 100%;
                 }
@@ -126,6 +183,7 @@ footer{
     margin-top: 40px;
     margin-bottom: 40px;
     .row.product-sheet{
+        justify-content: center;
         .popUpAddCaddy{
             height: 100px;
             background: #fcf4ff;
@@ -133,9 +191,13 @@ footer{
             border-radius: 5px;
             width: 500px;
             position: fixed;
-            left: 32%;
             top: 30%;
             text-align: center;
+            @media (max-width: 776px){
+                width: 85%;
+                height: auto;
+                margin: auto;
+            }
             .textAddCaddy{
                 padding: 40px;
             }
@@ -163,6 +225,14 @@ footer{
             position: relative;
             top: 131px;
             height: 45px;
+            @media (max-width: 776px){
+                top: 60px;
+                width: 100%;
+                margin: auto;
+            }
+            @media (min-width: 776px) and (max-width: 1024px){
+                top: 30px;
+            }
             input{
                 width: 25%;
                 text-align: center;
@@ -171,6 +241,9 @@ footer{
                 display: flex;
                 width: 100%;
                 background: linear-gradient(45deg, #f99836, #F0D3F7);
+                @media (max-width: 776px){
+                    align-items: center;
+                }
                 .add-to-caddy{
                     width: 82%;
                     color: white;
@@ -187,6 +260,10 @@ footer{
                     font-weight: 600;
                     width: 18%;
                     text-align: center;
+                   @media (max-width: 1024px) {
+                    width: 50%;
+                    padding: 5px;
+                   }
                 }
 
             }
@@ -261,76 +338,4 @@ footer{
             margin-top: 60px;
         }
     }
-}
-
-@media all and (min-width: 375px) and (max-width: 667px){
-    footer{
-        height: 120px
-    }
-    #navbarContent{
-        .navbar-nav{
-            right: -10px;
-            top: 47px;
-            width: 50%;
-            background-color: white;
-            border-radius: 5px;
-            }
-        }
-    .navbar-toggler{
-        background: white;
-        position: relative;
-        top: -8px;
-        right: -25px;
-    }
-    .content-scene{
-        .content-scene-bg{
-            background-size: cover;
-            background-position: right;
-            .para-content-scene{
-                position: relative;
-                top: 0px;
-                left: 50px;
-            }
-        }
-}
-.productsheet{
-    .row.product-sheet{
-    display: block;
-    .info-product{
-        border-left: 0;
-        .dscpt-product, p, #personalize-btn-select{
-            margin-left: 0;
-        }
-        .buy-it{
-            top: 60px;
-            margin-left: 0;
-            input{
-                width: 25%;
-                text-align: center;
-            }
-            .custom-buy-it{
-                .add-to-caddy{
-                    width: 70%;
-                }
-                .p-price{    
-                    padding: 0;
-                    margin: auto 0px;
-                    width: 30%;}
-            }
-        }
-    }
-    .popUpAddCaddy{
-        width: 275px;
-        left: 53px;
-    }
-}
-}
-.container.caddy-content-form{
-.form{
-    padding: 0;
-   .form-control{
-        width: auto;
-    }
-}
-}
 }
