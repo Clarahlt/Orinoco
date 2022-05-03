@@ -1,0 +1,3 @@
+[submodule "JWPD5"]
+    path = JWDP5,
+	url = https://github.com/OpenClassrooms-Student-Center/JWDP5.git
