@@ -274,11 +274,23 @@ footer{
         
     }
 }
-
-
 //Panier
 .container.caddy-content-form{
     height: 410px;
+    .table{
+        .titles-table:nth-child(4){
+            @media (max-width: 776px){
+                display: none;
+            }
+        }
+        #caddy{
+            .totalLine{
+                @media (max-width: 776px){
+                    display: none;
+                }
+            }
+        }
+    }
     #totalCaddy{
         position: relative;
         right: -35px;

@@ -363,6 +363,18 @@ footer ul a:hover {
   height: 410px;
 }
 
+@media (max-width: 776px) {
+  .container.caddy-content-form .table .titles-table:nth-child(4) {
+    display: none;
+  }
+}
+
+@media (max-width: 776px) {
+  .container.caddy-content-form .table #caddy .totalLine {
+    display: none;
+  }
+}
+
 .container.caddy-content-form #totalCaddy {
   position: relative;
   right: -35px;
