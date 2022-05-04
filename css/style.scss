@@ -26,7 +26,6 @@ body{
 }
 footer{
     background-color: #302F4D;
-    height: 100px;
     position: relative;
     bottom: -36px;
     ul{
@@ -275,21 +274,11 @@ footer{
     }
 }
 //Panier
-.container.caddy-content-form{
-    height: 410px;
-    .table{
-        .titles-table:nth-child(4){
-            @media (max-width: 776px){
-                display: none;
-            }
-        }
-        #caddy{
-            .totalLine{
-                @media (max-width: 776px){
-                    display: none;
-                }
-            }
-        }
+.caddy-content-form{
+    .container-validation{
+        justify-content: center;
+        margin: auto;
+        width: 100%;
     }
     #totalCaddy{
         position: relative;
@@ -298,6 +287,14 @@ footer{
     }
     .form{
         padding: 35px;
+        h3{
+            position: relative;
+            top: -29px;
+        }
+        hr{
+            position: relative;
+            top: -41px;
+        }
     }
     .deleteBtn{
         width: 75%;
@@ -337,7 +334,6 @@ footer{
         
 }
 .container.content-confirmation{
-    height: 450px;
     background: #fcf4ff;
     margin-top: 50px;
     border-radius: 25px;
@@ -348,6 +344,9 @@ footer{
             width: 30%;
             height: 30px;
             margin-top: 60px;
+            @media (max-width: 776px){
+                width: 100%;
+            }
         }
     }
 }

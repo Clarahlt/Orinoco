@@ -40,7 +40,6 @@ body {
 
 footer {
   background-color: #302F4D;
-  height: 100px;
   position: relative;
   bottom: -36px;
 }
@@ -359,43 +358,45 @@ footer ul a:hover {
   }
 }
 
-.container.caddy-content-form {
-  height: 410px;
+.caddy-content-form .container-validation {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: auto;
+  width: 100%;
 }
 
-@media (max-width: 776px) {
-  .container.caddy-content-form .table .titles-table:nth-child(4) {
-    display: none;
-  }
-}
-
-@media (max-width: 776px) {
-  .container.caddy-content-form .table #caddy .totalLine {
-    display: none;
-  }
-}
-
-.container.caddy-content-form #totalCaddy {
+.caddy-content-form #totalCaddy {
   position: relative;
   right: -35px;
   font-size: 18px;
 }
 
-.container.caddy-content-form .form {
+.caddy-content-form .form {
   padding: 35px;
 }
 
-.container.caddy-content-form .deleteBtn {
+.caddy-content-form .form h3 {
+  position: relative;
+  top: -29px;
+}
+
+.caddy-content-form .form hr {
+  position: relative;
+  top: -41px;
+}
+
+.caddy-content-form .deleteBtn {
   width: 75%;
   height: 30px;
   background: #A57982;
 }
 
-.container.caddy-content-form .deleteBtn i {
+.caddy-content-form .deleteBtn i {
   color: white;
 }
 
-.container.caddy-content-form .popUpEmptyCart, .container.caddy-content-form .popUpFormValues {
+.caddy-content-form .popUpEmptyCart, .caddy-content-form .popUpFormValues {
   height: 100px;
   background: #fcf4ff;
   -webkit-box-shadow: -2px 1px 9px;
@@ -408,19 +409,19 @@ footer ul a:hover {
   text-align: center;
 }
 
-.container.caddy-content-form .popUpEmptyCart .txtEmptyCart, .container.caddy-content-form .popUpFormValues .txtEmptyCart {
+.caddy-content-form .popUpEmptyCart .txtEmptyCart, .caddy-content-form .popUpFormValues .txtEmptyCart {
   padding: 12px;
   font-size: 25px;
 }
 
-.container.caddy-content-form .btnPopUp {
+.caddy-content-form .btnPopUp {
   position: absolute;
   right: 30%;
   height: 25px;
   bottom: 15px;
 }
 
-.container.caddy-content-form .btnPopUp1 {
+.caddy-content-form .btnPopUp1 {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -428,7 +429,6 @@ footer ul a:hover {
 }
 
 .container.content-confirmation {
-  height: 450px;
   background: #fcf4ff;
   margin-top: 50px;
   border-radius: 25px;
@@ -443,5 +443,11 @@ footer ul a:hover {
   width: 30%;
   height: 30px;
   margin-top: 60px;
+}
+
+@media (max-width: 776px) {
+  .container.content-confirmation .ctent-confirm .btnReturn {
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=style.css.map */
