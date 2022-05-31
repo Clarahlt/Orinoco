@@ -447,7 +447,7 @@ footer ul a:hover {
 
 @media (max-width: 776px) {
   .container.content-confirmation .ctent-confirm .btnReturn {
-    width: 100%;
+    width: 80%;
   }
 }
 /*# sourceMappingURL=style.css.map */

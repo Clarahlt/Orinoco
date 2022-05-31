@@ -44,7 +44,8 @@ function drawTable(product) {
       //Création d'un boutton de supression pour chaque produit selectionné
       let $deleteCase = document.createElement("td");
       let $deleteBtn = document.createElement("button");
-      $deleteBtn.setAttribute("class", "deleteBtn ");
+      $deleteBtn.setAttribute("class", "deleteBtn");
+      $deleteBtn.setAttribute(":id", product[i]._id)
       let deleteIcon = document.createElement("i");
       deleteIcon.setAttribute("class", "fas fa-trash-alt");
 
@@ -57,8 +58,14 @@ function drawTable(product) {
 
       // la fonction 'deleteProduct()' supprime le produit du sessionStorage et reload la page web.
       $deleteBtn.onclick = function deleteProduct() {
-        sessionStorage.removeItem(arrayProductsId);
+      let articlesStorage = sessionStorage.getItem(product[i]._id)
+      let article = JSON.parse(articlesStorage)
+      if(article._id == product[i]._id){
+        sessionStorage.removeItem(product[i]._id);
         window.location.reload();
+      } else {
+        console.log("La suppression a échoué");
+      }
       };
 
       table.appendChild($newLineProduct);
