@@ -60,7 +60,8 @@ function drawTable(product) {
       $totalLine.textContent = product[i].totalPrice + "€";
       totalPrice.push(product[i].totalPrice);
 
-      //Si on souhaite changer la qty du produit
+      //Si on modifie la quantité du produit, sessionStorage se met à jour avec le nouveau prix et la nouvelle quantité. 
+      //Le caddy se met à jour également.
       $inputQty.onchange = function updateProduct(){
         console.log("la qty du produit a changé");
         if($inputQty.value != product[i].quantity){
@@ -69,8 +70,13 @@ function drawTable(product) {
           console.log(product[i].totalPrice);
           sessionStorage.setItem(product[i]._id, JSON.stringify(product[i]))
           window.location.reload();
+          if(product[i].quantity == 0){
+          console.log(product[i].quantity);
+          sessionStorage.removeItem(product[i]._id)
+          window.location.reload();
+          }
         } else {
-          console.log("les valeurs  sont les memes");
+          console.log("un problème est survenu lors de la modification de la quantité du produit");
         }
       }
 
