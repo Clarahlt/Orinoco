@@ -37,6 +37,11 @@ function drawTable(product) {
       let $newLineProduct = document.createElement("tr");
       let $nameProd = document.createElement("td");
       let $prodQty = document.createElement("td");
+      let $inputQty = document.createElement("input");
+      $inputQty.setAttribute("class", "inputQty");
+      $inputQty.setAttribute(":id", product[i]._id);
+      $inputQty.setAttribute("type", "number");
+      $inputQty.setAttribute("value", product[i].quantity);
       let $unitPrice = document.createElement("td");
       $unitPrice.setAttribute("class", "unitPrice");
       let $totalLine = document.createElement("td");
@@ -51,10 +56,23 @@ function drawTable(product) {
 
       //affichage des données dans la panier
       $nameProd.innerText = product[i].name;
-      $prodQty.innerHTML = product[i].quantity;
       $unitPrice.innerText = product[i].price + "€";
       $totalLine.textContent = product[i].totalPrice + "€";
       totalPrice.push(product[i].totalPrice);
+
+      //Si on souhaite changer la qty du produit
+      $inputQty.onchange = function updateProduct(){
+        console.log("la qty du produit a changé");
+        if($inputQty.value != product[i].quantity){
+          product[i].quantity = $inputQty.value
+          product[i].totalPrice = product[i].price * $inputQty.value
+          console.log(product[i].totalPrice);
+          sessionStorage.setItem(product[i]._id, JSON.stringify(product[i]))
+          window.location.reload();
+        } else {
+          console.log("les valeurs  sont les memes");
+        }
+      }
 
       // la fonction 'deleteProduct()' supprime le produit du sessionStorage et reload la page web.
       $deleteBtn.onclick = function deleteProduct() {
@@ -71,6 +89,7 @@ function drawTable(product) {
       table.appendChild($newLineProduct);
       $newLineProduct.appendChild($nameProd);
       $newLineProduct.appendChild($prodQty);
+      $prodQty.appendChild($inputQty);
       $newLineProduct.appendChild($unitPrice);
       $newLineProduct.appendChild($totalLine);
       $newLineProduct.appendChild($deleteCase);
@@ -213,10 +232,11 @@ function send(sentToServer) {
 
 
 
- /**
+  /**
    * Fonction qui reload la page et renvoi un nouveau contenu confirmation de commande avec un numéro 'orderId'
    */
   function hydratatePage() {
+    sessionStorage.clear();
     console.log("Entrée dans la fonction hydratePage");
     const responseId = localStorage.getItem("orderId");
     console.log('Afficher:' + ' ' + responseId);

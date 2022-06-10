@@ -39,6 +39,9 @@ fetch('http://localhost:3000/api/cameras/' + idUrlProducts)
     $lenses.innerText = lensesArray[i];
   }
 
+
+  
+
   // Permet d'ajouter, au clic du bouton btnAddToCaddy l'article au panier
   let btnAddToCaddy = document.querySelector('.add-to-caddy');
   btnAddToCaddy.addEventListener('click', (event) => {
@@ -63,6 +66,7 @@ fetch('http://localhost:3000/api/cameras/' + idUrlProducts)
     popUpAddToCaddy('Votre produit a été ajouté au panier !')
   })
 })
+.catch(error => ('Impossible de récupérer le produit ! Veuillez réessayer ultérieurement!'))
 }
 
 /**
